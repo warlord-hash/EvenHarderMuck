@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "EHM.Core": {
+      "commandName": "Executable",
+      "executablePath": "E:\\SteamLibrary\\steamapps\\common\\Muck\\Muck.exe"
+    }
+  }
+}
