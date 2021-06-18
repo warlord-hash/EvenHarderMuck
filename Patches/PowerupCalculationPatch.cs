@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using HarmonyLib;
+﻿using HarmonyLib;
 using JetBrains.Annotations;
-using UnityEngine;
 
 namespace EHM.Core.Patches
 {
@@ -15,7 +8,7 @@ namespace EHM.Core.Patches
     }
     
     [HarmonyPatch(typeof(PowerupInventory), "GetSpeedMultiplier")]
-    class CalculationsPatch
+    class SpeedCalculationsPatch
     {
         [HarmonyPostfix]
         static void RemoveSpeedCap([CanBeNull] int[] playerPowerups, ref float __result)
@@ -28,6 +21,16 @@ namespace EHM.Core.Patches
             }
 
             __result = (1f + single) * adrenalineBoost * PlayerStatus.Instance.currentSpeedArmorMultiplier;
+        }
+    }
+
+    [HarmonyPatch(typeof(PowerupInventory), "GetMaxDraculaStacks")]
+    class RemoveDraculaMaxStack
+    {
+        [HarmonyPostfix]
+        static void Remove(ref int __result)
+        {
+            __result = int.MaxValue;
         }
     }
 }

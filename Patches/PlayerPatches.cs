@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using BepInEx;
-using UnityEngine;
-using HarmonyLib;
+﻿using HarmonyLib;
 
 namespace EHM.Core.Patches
 {
