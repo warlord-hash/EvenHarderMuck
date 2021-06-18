@@ -11,4 +11,5 @@ After you've downloaded the mod, open the .zip file & open the folder named "Eve
 
 ### Update history
 v1.0.1 - Added supermoon which happens every 7 days and increases mob strength, nerfed mob buff, removed dracula stack limit
+
 v1.0.0 - Initial release
