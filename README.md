@@ -9,7 +9,10 @@ I currently have lots of features planned, like more custom items & ways to make
 ### How to install (manual)
 After you've downloaded the mod, open the .zip file & open the folder named "EvenHarderMuck". Export it in ``your_steam_muck_folder\BepInEx\Plugins`` & open up the game.
 
-### Update history
-v1.0.1 - Added supermoon which happens every 7 days and increases mob strength, nerfed mob buff, removed dracula stack limit
+### How to play on multiplayer
+To play on multiplayer with others, all of the players in your lobby must have the mod.
 
+### Update history
+v1.0.2 - Mob multipliers now increase by players alive and by day, all mobs now also drop 50% less coins and also reduced night length by a bit (0.8 to 0.7)
+v1.0.1 - Added supermoon which happens every 7 days and increases mob strength, nerfed mob buff, removed dracula stack limit
 v1.0.0 - Initial release
