@@ -14,5 +14,7 @@ To play on multiplayer with others, all of the players in your lobby must have t
 
 ### Update history
 v1.0.2 - Mob multipliers now increase by players alive and by day, all mobs now also drop 50% less coins and also reduced night length by a bit (0.8 to 0.7)
+
 v1.0.1 - Added supermoon which happens every 7 days and increases mob strength, nerfed mob buff, removed dracula stack limit
-v1.0.0 - Initial release
+
+1.0.0 - Initial release
