@@ -1,0 +1,10 @@
+E:\SteamLibrary\steamapps\common\Muck\BepInEx\plugins\netstandard2.0\EHM.Items.deps.json
+E:\SteamLibrary\steamapps\common\Muck\BepInEx\plugins\netstandard2.0\EHM.Items.dll
+E:\SteamLibrary\steamapps\common\Muck\BepInEx\plugins\netstandard2.0\EHM.Items.pdb
+C:\Users\Даниил\Desktop\Muck_Origin\EvenHarderMuck\Items\EHM.Items\EHM.Items\obj\Debug\netstandard2.0\EHM.Items.csprojAssemblyReference.cache
+C:\Users\Даниил\Desktop\Muck_Origin\EvenHarderMuck\Items\EHM.Items\EHM.Items\obj\Debug\netstandard2.0\EHM.Items.csproj.CoreCompileInputs.cache
+C:\Users\Даниил\Desktop\Muck_Origin\EvenHarderMuck\Items\EHM.Items\EHM.Items\obj\Debug\netstandard2.0\EHM.Items.AssemblyInfoInputs.cache
+C:\Users\Даниил\Desktop\Muck_Origin\EvenHarderMuck\Items\EHM.Items\EHM.Items\obj\Debug\netstandard2.0\EHM.Items.AssemblyInfo.cs
+C:\Users\Даниил\Desktop\Muck_Origin\EvenHarderMuck\Items\EHM.Items\EHM.Items\obj\Debug\netstandard2.0\EHM.Items.dll
+C:\Users\Даниил\Desktop\Muck_Origin\EvenHarderMuck\Items\EHM.Items\EHM.Items\obj\Debug\netstandard2.0\EHM.Items.pdb
+C:\Users\Даниил\Desktop\Muck_Origin\EvenHarderMuck\Items\EHM.Items\EHM.Items\obj\Debug\netstandard2.0\EHM.Items.csproj.CopyComplete

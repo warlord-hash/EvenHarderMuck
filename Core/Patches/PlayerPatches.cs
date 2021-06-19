@@ -1,4 +1,6 @@
 ﻿using HarmonyLib;
+using UnityEngine;
+using System.Reflection;
 
 namespace EHM.Core.Patches
 {
@@ -12,8 +14,12 @@ namespace EHM.Core.Patches
         [HarmonyPostfix]
         static void DecreaseHunger(PlayerStatus __instance)
         {
-            if (__instance.hunger == 0)
-                __instance.hp -= 0.05f;
+            var flags = BindingFlags.Public | BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Static;
+
+            if (__instance.hunger == 0 && __instance.hp > 0)
+                __instance.hp -= 0.01f;
+            else if (__instance.hp <= 0)
+                typeof(PlayerStatus).GetMethod("PlayerDied", flags).Invoke(__instance, new object[0]);
         }
     }
 
