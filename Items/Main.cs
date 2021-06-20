@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using BepInEx;
+using EHM.Items.Patches;
 using HarmonyLib;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace EHM.Items
 {
@@ -14,16 +16,20 @@ namespace EHM.Items
     {
         public const string GUID = "studzy.EHM.items";
         public const string Name = "EHM Items";
-        public const string Version = "1.0.0";
+        public const string Version = "1.0.1";
 
         public static InventoryItem[] items;
+        public static Texture2D[] sprites;
+        public static GameObject accs = null;
         public static bool inventoryAdded = false;
+        public static bool changedUI = false;
 
         internal void Awake()
         {
             Debug.Log("Loaded " + Name + " v" + Version);
             var items_a = GetAssetBundleFromResources("custom_items");
             items = items_a.LoadAllAssets<InventoryItem>();
+            sprites = items_a.LoadAllAssets<Texture2D>();
 
             var harmony = new Harmony("com.studzy.ehmitems");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
@@ -47,9 +53,9 @@ namespace EHM.Items
 
             for (int i = 0; i < items.Length; i++)
             {
-                switch (items[i].id)
+                switch (items[i].name)
                 {
-                    case 129:
+                    case "Forge":
                         items[i].prefab.gameObject.layer = LayerMask.NameToLayer("Object");
                         items[i].prefab.gameObject.transform.Find("Interactable").gameObject.layer = LayerMask.NameToLayer("Interact");
                         items[i].prefab.gameObject.AddComponent<HitableChest>();
@@ -88,14 +94,28 @@ namespace EHM.Items
 
                         AddCraftable(items[i], ItemManager.Instance.GetItemByName("Workbench"), iList.ToArray());
                         break;
-                    case 130:
+                    case "Glowpowder":
                         List<InventoryItem.CraftRequirement> iList3 = new List<InventoryItem.CraftRequirement>(){
                             new InventoryItem.CraftRequirement(){item=ItemManager.Instance.GetItemByName("Flint"),amount=4},
                         };
 
                         AddCraftable(items[i], ItemManager.Instance.GetItemByName("Workbench"), iList3.ToArray());
                         break;
-                    case 132:
+                    case "Steel Ring":
+                        List<InventoryItem.CraftRequirement> iList4 = new List<InventoryItem.CraftRequirement>(){
+                            new InventoryItem.CraftRequirement(){item=ItemManager.Instance.GetItemByName("Iron bar"),amount=4},
+                        };
+
+                        AddCraftable(items[i], ItemManager.Instance.GetItemByName("Anvil"), iList4.ToArray());
+                        break;
+                    case "Mithril Ring":
+                        List<InventoryItem.CraftRequirement> iList5 = new List<InventoryItem.CraftRequirement>(){
+                            new InventoryItem.CraftRequirement(){item=ItemManager.Instance.GetItemByName("Mithril bar"),amount=4},
+                        };
+
+                        AddCraftable(items[i], ItemManager.Instance.GetItemByName("Anvil"), iList5.ToArray());
+                        break;
+                    case "Trezolite Katana":
                         List<InventoryItem.CraftRequirement> iList2 = new List<InventoryItem.CraftRequirement>(){
                             new InventoryItem.CraftRequirement(){item=ItemManager.Instance.GetItemByName("Trezolite Bar"),amount=7},
                             new InventoryItem.CraftRequirement(){item=ItemManager.Instance.GetItemByName("Oak Wood"),amount=5}
@@ -111,7 +131,7 @@ namespace EHM.Items
         {
             if (SceneManager.GetActiveScene().name == "GameAfterLobby")
             {
-                if(!inventoryAdded)
+                if (!inventoryAdded)
                 {
                     List<InventoryItem> workbenchList = new List<InventoryItem>{
                     ItemManager.Instance.GetItemByName("Forge"),
@@ -128,8 +148,38 @@ namespace EHM.Items
                     ItemManager.Instance.GetItemByName("Trezolite Katana"),
                 };
                     AddToStation(anvilList, "AnvilNew", 2);
+
+                    List<InventoryItem> anvilList2 = new List<InventoryItem>{
+                    ItemManager.Instance.GetItemByName("Steel Ring"),
+                    ItemManager.Instance.GetItemByName("Mithril Ring"),
+                };
+                    AddToStation(anvilList2, "AnvilNew", 0);
                     inventoryAdded = true;
                 }
+
+                ChangeUI();
+            }
+            else
+            {
+                inventoryAdded = false;
+                SpeedMultiplierPatch.set = false;
+            }
+        }
+
+        void ChangeUI()
+        {
+            if (!changedUI)
+            {
+                foreach (GameObject ArrowsSlot in Resources.FindObjectsOfTypeAll<GameObject>().Where(obj => obj.name == "Arrow/Left Slot"))
+                {
+                    GameObject leftHand = ArrowsSlot.transform.Find("Left hand").gameObject;
+                    accs = Instantiate(leftHand, ArrowsSlot.transform);
+                    accs.name = "Accessories";
+                    accs.transform.position -= new Vector3(0, -40, 0);
+                    accs.GetComponent<RawImage>().texture = sprites[0];
+                    break;
+                }
+                changedUI = true;
             }
         }
 
@@ -154,9 +204,6 @@ namespace EHM.Items
                 {
                     InventoryItem[] iArray = itemss.ToArray();
                     ui.tabs[tabIndex].items = ui.tabs[tabIndex].items.Concat(iArray).ToArray();
-                } else
-                {
-                    Debug.Log("BRUH PENIS");
                 }
             }
         }

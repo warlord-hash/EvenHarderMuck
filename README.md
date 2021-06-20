@@ -16,6 +16,8 @@ To play on multiplayer with others, all of the players in your lobby must have t
 To report a bug, you can contact me on Discord (studzy#6907) or make a new issue on the GitHub repository.
 
 ### Update history
+v1.0.4 - Fixed crafting custom items, added a ring system which gives you a boost on a specific stat, added 2 rings
+
 v1.0.3 - Added 3 custom items, made Lil Daves give you 1 more coin (min and max), you can now only craft 2 coins at the anvil and also fixed hunger not killing you
 
 v1.0.2 - Mob multipliers now increase by players alive and by day, all mobs now also drop 50% less coins and also reduced night length by a bit (0.8 to 0.7)
