@@ -35,6 +35,7 @@ namespace EMH_RingsGaloreCompatabilityPatch
         public void Start()
         {
             EHM.Items.Main.changedUI = true;
+            RingsGaloreApi.Main.SingleSlot = false'
             RingsGaloreApi.Main.AddItemToRingSlot(ItemManager.Instance.GetItemByName("Steel Ring"));
             RingsGaloreApi.Main.AddItemToRingSlot(ItemManager.Instance.GetItemByName("Mithril Ring"));
             RingsGaloreApi.Main.AddItemEffects("Steel Ring", new RingsGaloreApi.AccessoryComponent { FlatSpeed = .15f });
