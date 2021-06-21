@@ -4,7 +4,7 @@ using HarmonyLib;
 using System.IO;
 using System.Reflection;
 
-namespace EMH_RingsGaloreCompatabilityPatch
+namespace EHM_RingsGaloreCompatabilityPatch
 {
     [BepInPlugin(GUID, MODNAME, VERSION)]
     [BepInDependency("studzy.EHM.items",BepInDependency.DependencyFlags.HardDependency)]
@@ -35,7 +35,7 @@ namespace EMH_RingsGaloreCompatabilityPatch
         public void Start()
         {
             EHM.Items.Main.changedUI = true;
-            RingsGaloreApi.Main.SingleSlot = false'
+            RingsGaloreApi.Main.SingleSlot = true;
             RingsGaloreApi.Main.AddItemToRingSlot(ItemManager.Instance.GetItemByName("Steel Ring"));
             RingsGaloreApi.Main.AddItemToRingSlot(ItemManager.Instance.GetItemByName("Mithril Ring"));
             RingsGaloreApi.Main.AddItemEffects("Steel Ring", new RingsGaloreApi.AccessoryComponent { FlatSpeed = .15f });
