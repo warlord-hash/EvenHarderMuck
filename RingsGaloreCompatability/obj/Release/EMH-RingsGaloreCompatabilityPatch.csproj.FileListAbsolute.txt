@@ -1,0 +1,4 @@
+C:\Users\adenn\source\repos\EMH-RingsGaloreCompatabilityPatch\Package\plugins\EMH-RingsGaloreCompatabilityPatch\EMH-RingsGaloreCompatabilityPatch.dll
+C:\Users\adenn\source\repos\EMH-RingsGaloreCompatabilityPatch\obj\Release\EMH-RingsGaloreCompatabilityPatch.csproj.AssemblyReference.cache
+C:\Users\adenn\source\repos\EMH-RingsGaloreCompatabilityPatch\obj\Release\EMH-RingsGaloreCompatabilityPatch.csproj.CoreCompileInputs.cache
+C:\Users\adenn\source\repos\EMH-RingsGaloreCompatabilityPatch\obj\Release\EMH-RingsGaloreCompatabilityPatch.dll
