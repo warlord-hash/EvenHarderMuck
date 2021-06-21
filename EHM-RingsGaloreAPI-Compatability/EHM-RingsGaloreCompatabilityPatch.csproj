@@ -8,8 +8,8 @@
     <ProjectGuid>{6CEB44EB-8AF1-4B87-8D90-1F972304758F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EMH_RingsGaloreCompatabilityPatch</RootNamespace>
-    <AssemblyName>EMH-RingsGaloreCompatabilityPatch</AssemblyName>
+    <RootNamespace>EHM_RingsGaloreCompatabilityPatch</RootNamespace>
+    <AssemblyName>EHM-RingsGaloreCompatabilityPatch</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -52,10 +52,6 @@
       <HintPath>E:\Games\steamapps\common\Muck\Muck_Data\Managed\Boxophobic.Utils.Scripts.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Curios">
-      <HintPath>E:\Games\steamapps\common\Muck\BepInEx\plugins\Curios\Curios.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="EHM.Items">
       <HintPath>..\..\..\AppData\Roaming\r2modmanPlus-local\Muck\profiles\Default\BepInEx\plugins\studzy-Even_Harder_Muck\EHM.Items.dll</HintPath>
       <Private>False</Private>
@@ -95,6 +91,9 @@
     <Reference Include="NavMeshComponents">
       <HintPath>E:\Games\steamapps\common\Muck\Muck_Data\Managed\NavMeshComponents.dll</HintPath>
       <Private>False</Private>
+    </Reference>
+    <Reference Include="RingsGaloreAPI">
+      <HintPath>E:\Games\steamapps\common\Muck\BepInEx\plugins\RingsGaloreAPI\RingsGaloreAPI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
       <HintPath>E:\Games\steamapps\common\Muck\Muck_Data\Managed\Unity.Postprocessing.Runtime.dll</HintPath>
@@ -366,6 +365,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(TargetDir)" "$(GameDir)\Bepinex\plugins\$(ProjectName)\" /q /s /y /i</PostBuildEvent>
+    <PostBuildEvent>xcopy "$(TargetDir)" "E:\Games\steamapps\common\Muck\BepInEx\plugins\$(ProjectName)\" /q /s /y /i</PostBuildEvent>
   </PropertyGroup>
 </Project>
